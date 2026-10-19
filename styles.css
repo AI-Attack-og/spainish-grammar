@@ -1,0 +1,199 @@
+/* Minimal MVP styling — structural only. Visual design pass comes later. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height: 1.5;
+  color: #1a1a1a;
+  background: #ffffff;
+}
+
+.site-header {
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.site-header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+}
+
+.subtitle {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Table of contents */
+.toc {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.toc a {
+  color: #1a4fcf;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.toc a:hover {
+  text-decoration: underline;
+}
+
+/* Main content */
+#content {
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.part {
+  margin-bottom: 2rem;
+  scroll-margin-top: 1rem;
+}
+
+.part-title {
+  font-size: 1.25rem;
+  border-bottom: 2px solid #1a1a1a;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Accordion */
+.accordion-item {
+  border: 1px solid #ddd;
+  border-bottom: none;
+}
+
+.accordion-item:last-child {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-trigger {
+  width: 100%;
+  text-align: left;
+  background: #f5f5f5;
+  border: none;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  color: inherit;
+}
+
+.accordion-trigger:hover {
+  background: #ececec;
+}
+
+.accordion-trigger[aria-expanded="true"] {
+  background: #e8e8e8;
+}
+
+.accordion-icon {
+  flex-shrink: 0;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.accordion-panel {
+  padding: 0;
+  border-top: 1px solid #ddd;
+}
+
+.accordion-panel-inner {
+  padding: 1rem;
+}
+
+.accordion-panel-inner h4 {
+  margin: 1rem 0 0.4rem;
+  font-size: 1rem;
+}
+
+.accordion-panel-inner h4:first-child {
+  margin-top: 0;
+}
+
+.accordion-panel-inner p,
+.accordion-panel-inner ul,
+.accordion-panel-inner ol {
+  margin: 0.5rem 0;
+}
+
+.accordion-panel-inner ul,
+.accordion-panel-inner ol {
+  padding-left: 1.25rem;
+}
+
+.accordion-panel-inner li {
+  margin-bottom: 0.3rem;
+}
+
+.note {
+  font-style: italic;
+  color: #555;
+}
+
+/* Tables */
+.table-wrap {
+  overflow-x: auto;
+  margin: 0.5rem 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 400px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+th {
+  background: #f5f5f5;
+}
+
+/* Footer */
+.site-footer {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  color: #777;
+  font-size: 0.85rem;
+  border-top: 1px solid #ddd;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .site-header h1 {
+    font-size: 1.25rem;
+  }
+
+  .accordion-trigger {
+    font-size: 0.95rem;
+    padding: 0.65rem 0.8rem;
+  }
+
+  #content {
+    padding: 0.75rem;
+  }
+}
