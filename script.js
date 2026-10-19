@@ -3,10 +3,12 @@
 function buildTOC(data) {
   const toc = document.getElementById("toc");
   const list = document.createElement("ul");
+  list.className = "toc-list";
 
   data.forEach((part) => {
     const item = document.createElement("li");
     const link = document.createElement("a");
+    link.className = "toc-link";
     link.href = "#" + part.id;
     link.textContent = part.title;
     item.appendChild(link);
@@ -63,6 +65,13 @@ function buildContent(data) {
         button.setAttribute("aria-expanded", String(!isOpen));
         panel.hidden = isOpen;
         icon.textContent = isOpen ? "+" : "−";
+
+        if (!isOpen) {
+          panelInner.classList.remove("bounce-in");
+          // eslint-disable-next-line no-unused-expressions
+          panelInner.offsetWidth; // restart animation
+          panelInner.classList.add("bounce-in");
+        }
       });
 
       sectionEl.appendChild(button);
